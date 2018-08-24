@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		016DD9B51ECCA23A00315CD4 /* TwilioVoice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 016DD9B41ECCA23A00315CD4 /* TwilioVoice.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		38F71DFA1E9C333F0067E86F /* RNTwilioVoice.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F71DF91E9C333F0067E86F /* RNTwilioVoice.m */; };
-		38F71DFB1E9C333F0067E86F /* RNTwilioVoice.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 38F71DF81E9C333F0067E86F /* RNTwilioVoice.h */; };
+		71A9207E212DB45E00984D02 /* RNTwilioVoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A9207D212DB45E00984D02 /* RNTwilioVoice.swift */; };
+		9456C30DDB3048D6B78372EC /* rn-swift-bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = B286CFB45F1B448799E0071B /* rn-swift-bridge.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,7 +19,6 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				38F71DFB1E9C333F0067E86F /* RNTwilioVoice.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -28,8 +27,9 @@
 /* Begin PBXFileReference section */
 		016DD9B41ECCA23A00315CD4 /* TwilioVoice.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TwilioVoice.framework; path = "../../../Downloads/twilio-voice-ios/TwilioVoice.framework"; sourceTree = "<group>"; };
 		38F71DF51E9C333F0067E86F /* libRNTwilioVoice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNTwilioVoice.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		38F71DF81E9C333F0067E86F /* RNTwilioVoice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTwilioVoice.h; sourceTree = "<group>"; };
-		38F71DF91E9C333F0067E86F /* RNTwilioVoice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTwilioVoice.m; sourceTree = "<group>"; };
+		71A9207C212DB45E00984D02 /* RNTwilioVoice-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNTwilioVoice-Bridging-Header.h"; sourceTree = "<group>"; };
+		71A9207D212DB45E00984D02 /* RNTwilioVoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNTwilioVoice.swift; sourceTree = "<group>"; };
+		B286CFB45F1B448799E0071B /* rn-swift-bridge.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; path = "rn-swift-bridge.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +58,7 @@
 				38F71DF71E9C333F0067E86F /* RNTwilioVoice */,
 				38F71DF61E9C333F0067E86F /* Products */,
 				016DD9801ECC9B4B00315CD4 /* Frameworks */,
+				71A9207F212DB81000984D02 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,10 +73,18 @@
 		38F71DF71E9C333F0067E86F /* RNTwilioVoice */ = {
 			isa = PBXGroup;
 			children = (
-				38F71DF81E9C333F0067E86F /* RNTwilioVoice.h */,
-				38F71DF91E9C333F0067E86F /* RNTwilioVoice.m */,
+				71A9207D212DB45E00984D02 /* RNTwilioVoice.swift */,
+				71A9207C212DB45E00984D02 /* RNTwilioVoice-Bridging-Header.h */,
 			);
 			path = RNTwilioVoice;
+			sourceTree = "<group>";
+		};
+		71A9207F212DB81000984D02 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				B286CFB45F1B448799E0071B /* rn-swift-bridge.m */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -104,11 +113,12 @@
 		38F71DED1E9C333E0067E86F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 830;
 				ORGANIZATIONNAME = Erva;
 				TargetAttributes = {
 					38F71DF41E9C333F0067E86F = {
 						CreatedOnToolsVersion = 8.3.1;
+						LastSwiftMigration = 940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -135,7 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38F71DFA1E9C333F0067E86F /* RNTwilioVoice.m in Sources */,
+				71A9207E212DB45E00984D02 /* RNTwilioVoice.swift in Sources */,
+				9456C30DDB3048D6B78372EC /* rn-swift-bridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,28 +262,47 @@
 		38F71DFF1E9C333F0067E86F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(SRCROOT)/../../../ios/Pods/TwilioVoice",
+					"/Users/ray/Documents/twiliotest/ios/Pods/**",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ray/Documents/twiliotest/ios/Pods/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNTwilioVoice/RNTwilioVoice-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		38F71E001E9C333F0067E86F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(SRCROOT)/../../../ios/Pods/TwilioVoice",
+					"/Users/ray/Documents/twiliotest/ios/Pods/**",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/ray/Documents/twiliotest/ios/Pods/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "RNTwilioVoice/RNTwilioVoice-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
