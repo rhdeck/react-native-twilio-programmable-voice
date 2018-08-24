@@ -1,4 +1,4 @@
-import { NativeModules } from "react-native";
+import { NativeModules, NativeEventEmitter } from "react-native";
 //#region Code for object RNTwilioVoice
 const NativeRNTwilioVoice = NativeModules.RNTwilioVoice;
 const initWithAccessToken = async token => {
@@ -29,6 +29,46 @@ const getActiveCall = async () => {
   return await NativeRNTwilioVoice.getActiveCall();
 };
 //#endregion
+//#region events for object RNTwilioVoice
+var _getNativeRNTwilioVoiceEventEmitter = null;
+const getNativeRNTwilioVoiceEventEmitter = () => {
+  if (!_getNativeRNTwilioVoiceEventEmitter)
+    getNativeRNTwilioVoiceEventEmitter = new NativeEventEmitter(
+      NativeRNTwilioVoice
+    );
+  return _getNativeRNTwilioVoiceEventEmitter;
+};
+const subscribeToconnectionDidConnect = cb => {
+  return getNativeRNTwilioVoiceEventEmitter().addListener(
+    "connectionDidConnect",
+    cb
+  );
+};
+const subscribeToconnectionDidDisconnect = cb => {
+  return getNativeRNTwilioVoiceEventEmitter().addListener(
+    "connectionDidDisconnect",
+    cb
+  );
+};
+const subscribeTocallRejected = cb => {
+  return getNativeRNTwilioVoiceEventEmitter().addListener("callRejected", cb);
+};
+const subscribeTodeviceReady = cb => {
+  return getNativeRNTwilioVoiceEventEmitter().addListener("deviceReady", cb);
+};
+const subscribeTodeviceNotReady = cb => {
+  return getNativeRNTwilioVoiceEventEmitter().addListener("deviceNotReady", cb);
+};
+//#endregion
+//#region Event marshalling object
+const RNSEvents = {
+  connectionDidConnect: subscribeToconnectionDidConnect,
+  connectionDidDisconnect: subscribeToconnectionDidDisconnect,
+  callRejected: subscribeTocallRejected,
+  deviceReady: subscribeTodeviceReady,
+  deviceNotReady: subscribeTodeviceNotReady
+};
+//#endregion
 //#region Exports
 export {
   initWithAccessToken,
@@ -39,6 +79,12 @@ export {
   setSpeakerPhone,
   sendDigits,
   unregister,
-  getActiveCall
+  getActiveCall,
+  subscribeToconnectionDidConnect,
+  subscribeToconnectionDidDisconnect,
+  subscribeTocallRejected,
+  subscribeTodeviceReady,
+  subscribeTodeviceNotReady,
+  RNSEvents
 };
 //#endregion
