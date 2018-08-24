@@ -18,11 +18,14 @@ class RNTwilioVoice: RCTEventEmitter ,PKPushRegistryDelegate, TVONotificationDel
     var callParams:[String:String]?
     //#MARK: React Native Event Functions
     override func supportedEvents() -> [String]! {
-        return ["connectionDidConnect", "connectionDidDisconnect", "callRejected", "deviceReady", "deviceNotReady"];
+        return ["connectionDidConnect", "connectionDidDisconnect", "callRejected", "deviceReady", "deviceNotReady"]; //@RNSEvents
     }
     //#MARK: React Native Module Functions
     @objc func initWithAccessToken(_ token: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         self.token = token
+        NotificationCenter.default.addObserver(forName: .UIApplicationWillTerminate, object: nil, queue: nil) {_ in
+            self.appWillTerminate()
+        }
         let p = PKPushRegistry(queue: DispatchQueue.main)
         p.delegate = self
         p.desiredPushTypes = [PKPushType.voIP]
