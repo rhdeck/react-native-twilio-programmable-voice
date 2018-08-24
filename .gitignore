@@ -6,7 +6,7 @@ local.properties
 .idea/libraries
 .DS_Store
 .externalNativeBuild
-
+node_modules
 # Built application files
 *.apk
 *.ap_
