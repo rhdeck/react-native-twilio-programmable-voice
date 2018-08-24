@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "react-native-swift-bridge": "^2.4.2"
+  },
   "homepage": "https://github.com/hoxfon/react-native-twilio-programmable-voice",
   "keywords": [
     "twilio",
@@ -43,9 +45,7 @@
       "version": "2.0.4"
     }
   },
-  "dependencies": {
-    "react-native-swift-bridge": "^2.4.1"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react-native-pod": "^1.10.2",
     "react-native-swift": "^1.2.1"
