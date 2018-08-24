@@ -57,7 +57,7 @@ class RNTwilioVoice: RCTEventEmitter ,PKPushRegistryDelegate, TVONotificationDel
         }
         let id = UUID()
         callParams = params
-        guard let handle = params["To"] as? String else { reject("no_to", "To parameter not specified", nil); return }
+        guard let handle = params["To"] else { reject("no_to", "To parameter not specified", nil); return }
         let ch = CXHandle(type: CXHandle.HandleType.generic, value: handle)
         let ca = CXStartCallAction(call: id, handle: ch)
         let ct = CXTransaction(action: ca)
