@@ -43,7 +43,7 @@ const Twilio = {
   async initWithTokenUrl(url) {
     if (Platform.OS === IOS) {
       const { text } = await fetch({ url: url });
-      TwilioVoice.initWithAccessToken(text);
+      return await TwilioVoice.initWithAccessToken(text);
     }
   },
   connect(params = {}) {
