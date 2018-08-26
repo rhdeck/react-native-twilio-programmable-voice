@@ -29,15 +29,7 @@ const Twilio = {
         err: "Invalid token, token must be a string"
       };
     }
-
     const result = await TwilioVoice.initWithAccessToken(token);
-    // native react promise present only for Android
-    // iOS initWithAccessToken doesn't return
-    if (Platform.OS === IOS) {
-      return {
-        initialized: true
-      };
-    }
     return result;
   },
   async initWithTokenUrl(url) {
