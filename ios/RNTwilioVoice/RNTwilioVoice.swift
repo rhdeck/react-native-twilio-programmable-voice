@@ -30,7 +30,7 @@ class RNTwilioVoice: RCTEventEmitter ,PKPushRegistryDelegate, TVONotificationDel
         p.delegate = self
         p.desiredPushTypes = [PKPushType.voIP]
         pushRegistry = p
-        resolve(true)
+        resolve(["initialized": true])
     }
     @objc func configureCallKit(_ params: [String: Any], resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
         let c = CXCallController(queue: DispatchQueue.main)
